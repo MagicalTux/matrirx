@@ -1,0 +1,8 @@
+data directory
+$Id: desc.txt 57 2005-04-27 11:50:15Z MagicalTux $
+
+In this directory, for each loaded addon, a directory will
+be created and the addon will run in a chroot, in this directory.
+
+Each addon is allowed to save data in this directory, as any
+form it wants.

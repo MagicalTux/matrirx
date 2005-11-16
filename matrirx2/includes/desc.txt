@@ -1,0 +1,4 @@
+main : all main includes, to be used in the main process
+sub : all sub includes, to be used in forked processes
+
+Note: only files starting with 'S' will be loaded

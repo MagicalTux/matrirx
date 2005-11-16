@@ -1,0 +1,14 @@
+ChangeLog - $Id: changelog.txt 74 2005-05-02 15:52:57Z MagicalTux $
+
+Version 0.1.121 [DEV] :
+
+Version 0.1.120 [RELEASE] :
+ * (MagicalTux) Moved cnx check on connect
+ * (MagicalTux) Added user callbacks support
+ * (MagicalTux) Fixed user modes (no longer includes "+")
+ * (MagicalTux) Synced with "running" tree
+ * (MagicalTux) Added handling of INVITE calls from users
+
+Version 0.1.119 :
+ * (MagicalTux) First Public Release
+ * (MagicalTux) Just created a ChangeLog...

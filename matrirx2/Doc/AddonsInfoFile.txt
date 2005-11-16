@@ -1,0 +1,29 @@
+$Id: AddonsInfoFile.txt 58 2005-04-27 14:44:57Z MagicalTux $
+
+The addons "infos.txt" file contains various informations. Each
+information has a tag.
+
+Name:
+	The official name of the addon.
+
+Version:
+	The version of the addon.
+
+SVN:
+	The SVN information.
+
+Description:
+	The (long) description of the addon.
+
+Author:
+	Author's nickname
+
+Email:
+	Author's email
+
+URL:
+	Addon's URL
+
+Flags:
+	Addon's flags. Currently available flags :
+		I: IRC class connection addon

@@ -1,0 +1,4 @@
+Sun 15 03:14:33 [INFO] main MatrIRX v2.0.0 is currently loading...
+Sun 15 03:14:33 [NOTICE] main Forking new process for addon irc_unreal
+Sun 15 03:14:33 [NOTICE] main Forking new process for addon core
+Sun 15 03:14:33 [WARNING] core TEST :p

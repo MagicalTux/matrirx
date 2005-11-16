@@ -1,0 +1,78 @@
+Addons Protocol
+$Id: AddonsProtocol.txt 80 2005-05-10 16:05:27Z MagicalTux $
+
+There's two kinds of messages :
+
+- Core commands : commands to/from core
+- Addon messages : inter-addon messages
+
+The first ones are just beginning with the command.
+
+The second ones are starting with a ':' and :
+ - If sent to the core, they contain the target addon
+ - If coming from the core, they contain the origin addon
+
+Example :
+
+ * Addon foobar sends :
+> :irc_unreal PING
+ * Core will send that to irc_unreal :
+> :foobar PING
+ * irc_unreal will reply :
+> :foobar PONG
+ * Core will send that to foobar :
+> :irc_unreal PONG
+
+Special case : Broadcast Messages
+
+The broadcast messages (ABMG) are a special exception.
+
+Example: addons foo bar and irc_unreal are loaded.
+
+irc_unreal->Core: ABMG PING
+Core->foo: :irc_unreal PING
+Core->bar: :irc_unreal PING
+foo->Core: :irc_unreal PONG
+Core->irc_unreal: :foo PONG
+bar->Core: :irc_unreal PONG
+Core->irc_unreal: :bar PONG
+
+Since all addons *will* respond to PING, it is possible for
+an addon to get the list of responsive addons. However this method
+should be avoided as it will generate lot of work if many addons
+are loaded.
+
+ ***** PING (Child->Core)
+
+Sent every 10 seconds by each child. If the main process receive
+nothing from a child for 30 seconds, the childs is considered as
+being frozen, and is killed.
+
+ ***** PING (Core->Child)
+
+Sent from times to times by the core. It helps geting an idea of
+the latency of a child. The core also uses special techniques in order
+to get its own latency.
+
+ ***** PONG (Child->Core)
+
+Reply to PING. Core does not send any reply when pinged.
+
+ ***** INFO <info string> (Child->Core)
+
+Sent by the child, this contains various informations about the
+process. It may contain the current status, the version, the name
+of the module or anything useful (or not).
+
+ ***** CREQ
+
+Sent by the IRC child, this request is asking for the configuration
+content (conf/main.php). It can be accepted only if the server has the
+I flag. If not accepted, nothing will be sent back.
+
+ ***** CONF
+
+Sent by the main process, the following string is a base64 encoded string
+of the serialized configuration.
+
+All other commands will be forwarded directly to the IRC process.

@@ -1,0 +1,8 @@
+Name: Generic IRC Access
+Version: 2.0.0
+SVN: $Id: infos.txt 82 2005-05-12 13:50:11Z MagicalTux $
+Description: Generic IRC access
+Author: MagicalTux
+Email: MagicalTux@FF.st
+URL: http://ff.st/
+Flags: I

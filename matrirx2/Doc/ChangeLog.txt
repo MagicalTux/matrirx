@@ -1,0 +1,126 @@
+*******************************
+***** MatrIRX 2 ChangeLog *****
+*******************************
+Version: $Id: ChangeLog.txt 108 2005-05-27 11:11:56Z MagicalTux $
+
+************ Version 2.0.0
+
+2005-05-27
+	irc_unreal: fixed 100% due to partial implementation of socket_add/socket_del
+	Removed debug output
+	Wrote compatibility layer for PHP 5.0 - now the program is compatible
+		with PHP 5.0 and PHP 5.1 !
+
+2005-05-26
+	Coded things
+	Implemented inet_ntop() call (now supported by PHP5.1-dev)
+
+2005-05-24
+	addons: fixed addon array being overwritten when killed
+	irc_unreal: Now clearing irc wbuf on reconnect
+	Fixed bad socket making select() return immediatly (99.9% CPU)
+
+2005-05-23
+	Implemented new buffered I/O for inter-process communication
+		This has, however, reduced the answer speed from 3ms to 20ms
+		The buffered I/O still need some optimisation (like try to
+		write first, then append to buffer)
+		In normal operation mode, the buffer should not be used. It
+		will be used only when there's too much traffic
+	Check SVN logs for last days
+
+2005-05-12
+	Implemented Logging levels
+	Removed "Process loaded" message
+	Fixed bad variable name on config requests
+	Added addon "irc_generic" (normal irc connection)
+	Added latency reports
+	Implemented Logger class, and method Logger::Log()
+
+2005-05-11
+	Various things
+
+2005-05-10
+	Updated Interaddon protocol documentation
+	Implemented PING/PONG for interchild
+	Improved irc transmitted messages
+	Improved inter-addon protocol
+
+2005-05-09
+	Found a way to transmit user informations when required
+	Prepared Multi-process calls
+	Implemented new function (core to addon) : CALL
+	ABMG now working
+
+2005-05-04
+	Self-registering ourself when connecting
+	Improved IRC connection speed with two new triggers :
+	 - child_ready (sent once all child includes are loaded)
+	 - tp_conf (sent when we receive the configuration via the threadpipe)
+
+2005-05-02
+	Improved nickcharsets management
+	Implemented user/server tracking
+
+2005-04-28
+	Fixed resolving of numeric server in irc_parse()
+	Optimised loading (starts faster)
+	Implemented NICKIP protocol system
+	Fixed bug with PHP5.0+ in channel management
+	Implemented new Unreal cloak algorythm (md5 based)
+	Added callmod() from MatrIRX1 (to be updated)
+	Added server functions (resolve & record)
+	Implemented users & chans functions from MatrIRX 1
+	Fixed bug with infinite loop in childs if the master has no timer
+	Implemented process tracing (using pcntl_wait())
+	Currently implementing Unreal Protocol in irc_unreal addon
+	Implemented CREQ/CONF in internal protocol (requires flag I)
+	Improved addons support is some ways
+	Added Unreal defines
+	Removed /tmp as it's not being used
+	Made link possible
+	Implemented old irc_parse() and irc_send() in Unreal addon
+
+2005-04-27
+	Implemented triggers_del()
+	Flushing config from memory when forking
+	Addons sourcecopy now implemented
+	Addons chroot() now implemented
+	Addon list is now built on boot & on rehash. This will allow the user
+		to display a list of running addons.
+	Now using PHP5's microtime ability to return float values
+	Timers are now calculating time before next timer, which is used as
+		a timeout for stream_select()
+	Tested answer speed from pipe
+	Wrote more code for subprocess handling
+	Created socket waiting system, replacing old usleep() calls
+
+2005-04-26
+	Added "shutdown" trigger
+	Added SIGHUP handler (should work - not tested)
+	Compiled PHP 5.1 from CVS (20050426) and uploaded it to the SVN :
+		http://svn.ff.st/matrirx/php5-win/
+		The sourcecode is also available.
+	Switched to PHP5.1 (cvs) interpreter to access some functions
+	Implemented PHP checks on startup
+	Preimplemented fork() call
+	Continued addons support
+	Added a chroot() error if chroot() is not present
+	Compiling new Unreal with options :
+		./configure --with-showlistmodes --enable-hub --enable-ssl --enable-ziplinks \
+		--enable-libcurl=/usr --enable-inet6 --enable-prefixaq --with-listen=5 --with-dpath=/home/ircd/Unreal3.2 \
+		--with-spath=/home/ircd/Unreal3.2/src/ircd --with-nick-history=2000 --with-sendq=3000000 --with-bufferpool=18 \
+		--with-hostname=Mark --with-permissions=0600 --with-fd-setsize=1024 --enable-dynamic-linking
+		and testing (MagicalTux)
+
+2004-10-08
+	Reduced main loop latency to 0.008sec (MagicalTux)
+	Added hi_initall to initialize base addons (MagicalTux)
+	Fixed: timers_add was always returning NULL (MagicalTux)
+	Added triggers "sigusr1" and "sigusr2" when such signals
+		are received (MagicalTux)
+	Calling trigger "child" after fork (MagicalTux)
+	Calling trigger "noop" in main loop (MagicalTux)
+	timers_delete can now match the func name with the ID (MagicalTux)
+	Implemented child_loop() for child processes (MagicalTux)
+	Created Doc/ and Doc/ChangeLog.txt - this file (MagicalTux)

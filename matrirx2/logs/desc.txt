@@ -1,0 +1,5 @@
+logs directory
+$Id: desc.txt 82 2005-05-12 13:50:11Z MagicalTux $
+
+Here, log files will appear. The logfiles will change each day.
+Logfiles are named after the current day, with the form yyyy-mm-dd.txt

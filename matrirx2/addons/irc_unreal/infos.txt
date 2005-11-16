@@ -1,0 +1,8 @@
+Name: UnrealIRCd Access
+Version: 2.0.0
+SVN: $Id: infos.txt 58 2005-04-27 14:44:57Z MagicalTux $
+Description: UnrealIRCd access class
+Author: MagicalTux
+Email: MagicalTux@FF.st
+URL: http://ff.st/
+Flags: I

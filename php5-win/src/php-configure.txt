@@ -1,0 +1,1 @@
+./configure --prefix=/usr/local/php-win --disable-cgi --with-zlib --with-bz2 --enable-ftp --enable-gettext --with-mysql=/usr/local/mysql --enable-pcntl --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --without-pear
