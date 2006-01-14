@@ -13,7 +13,7 @@ all: title matrirx
 title:
 	@echo "MatrIRX III - Makefile"
 
-libs/libphp5.a:
+libs/libphp5.a: php
 	@make -C php
 
 libs/libmatrirx_core.a: src/core

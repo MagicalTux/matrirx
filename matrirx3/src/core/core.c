@@ -11,8 +11,10 @@ void php_embed_shutdown();
 int zend_eval_string_ex(char *str, void *, char *string_name, int handle_exceptions);
 
 int main(int argc, char *argv[]) {
+	const char *phpcode="echo \"Hello World from PHP/\".phpversion().\" MatrIRX/\".matrirx_version().\"\\n\"; var_dump(get_loaded_extensions());";
+	printf("Passing PHP code to PHP5(sapi:embed): %s\n", phpcode);
 	php_embed_init(0, NULL);
-	zend_eval_string_ex("echo \"Hello World from PHP/\".phpversion().\"\n\";", NULL, "Test Code", 1);
+	zend_eval_string_ex(phpcode, NULL, "Test Code", 1);
 	php_embed_shutdown();
 	return 0;
 }
