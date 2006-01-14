@@ -1,6 +1,9 @@
 #make
 # MatrIRX III
 
+CFLAGS=-g -ggdb -O0
+# CFLAGS=-O3
+
 INTERNAL_LIBS=php5 matrirx_core
 
 all: title matrirx
@@ -11,11 +14,16 @@ title:
 	@echo "MatrIRX III - Makefile"
 
 libs/libphp5.a:
-	make -C php
+	@make -C php
 
-libs/libmatrirx_core.a:
-	make -C src/core
+libs/libmatrirx_core.a: src/core
+	@make -C src/core ../../$@ TARGET=../../$@ CFLAGS=$(DEBUG)
 
 matrirx: $(patsubst %,libs/lib%.a,$(INTERNAL_LIBS))
-	$(CC) -o $@ $(patsubst %,-l%,$(INTERNAL_LIBS)) `cat libs/*.dep`
+	$(CC) -o $@ -Llibs $(patsubst %,-l%,$(INTERNAL_LIBS)) `cat libs/*.dep`
+
+clean:
+	@make -C php clean
+	@make -C src/core clean
+	@rm -f libs/* matrirx
 

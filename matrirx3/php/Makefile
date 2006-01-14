@@ -12,7 +12,7 @@ php-$(PHP_VERSION).tar.bz2:
 	wget http://fr2.php.net/get/php-$(PHP_VERSION).tar.bz2/from/this/mirror
 
 php-$(PHP_VERSION):
-	tar xvjf php-$(PHP_VERSION).tar.bz2
+	tar xjf php-$(PHP_VERSION).tar.bz2
 
 clean:
 	rm -f ../libs/libphp5.a
