@@ -1,0 +1,8 @@
+// vim:ft=javascript
+// $Id: config.w32,v 1.1 2003/12/19 23:19:19 wez Exp $
+
+ARG_ENABLE('matrirx', 'MatrIRX SAPI', 'no');
+
+if (PHP_EMBED != "no") {
+	SAPI('matrirx', 'php_matrirx.c', 'php' + PHP_VERSION + 'embed.lib');
+}
