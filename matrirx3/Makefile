@@ -4,7 +4,7 @@
 CFLAGS=-g -ggdb -O0
 # CFLAGS=-O3
 
-INTERNAL_LIBS=php5 matrirx_core
+INTERNAL_LIBS=matrirx_core php5
 
 all: title matrirx
 
