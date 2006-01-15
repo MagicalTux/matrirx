@@ -6,7 +6,7 @@ CFLAGS=-g -ggdb -O0 --std=gnu99
 CC=gcc
 export CC CFLAGS
 
-INTERNAL_LIBS=matrirx_core php5
+INTERNAL_LIBS=php5 matrirx_core
 
 all: title matrirx
 

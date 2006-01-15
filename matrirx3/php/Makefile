@@ -21,7 +21,7 @@ php-$(PHP_VERSION)/sapi/matrirx: sapi
 	rm -fr php-$(PHP_VERSION)/sapi/matrirx; cp -a sapi/ php-$(PHP_VERSION)/sapi/matrirx
 
 php-$(PHP_VERSION)/config.status:
-	@cd php-$(PHP_VERSION); ./buildconf --force; CPPFLAGS="-I`pwd`/../../includes" ./configure --disable-cli --disable-cgi --disable-all --enable-matrirx --with-pcre --with-curl --with-zlib --enable-sockets --with-iconv --with-sqlite --enable-sqlite-utf8 --enable-mbstring --enable-calendar --enable-matrirx-sapi
+	@cd php-$(PHP_VERSION); ./buildconf --force; CPPFLAGS="-I`pwd`/../../includes" ./configure --disable-cli --disable-cgi --disable-all --enable-matrirx --with-pcre --with-curl --with-zlib --with-iconv --with-sqlite --enable-sqlite-utf8 --enable-mbstring --enable-calendar --enable-matrirx-sapi
 
 clean:
 	rm -f ../libs/libphp5.a

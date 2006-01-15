@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 	global_addon_name = NULL;
 	printf("MatrIRX III - Main process pid: %d\n", getpid());
 	start_child("test");
-	sleep(5);
+	sleep(2);
 	return 0;
 }
 
