@@ -18,7 +18,7 @@ title:
 libs/libphp5.a: php php/src php/sapi
 	@make -C php
 
-libs/libmatrirx_%.a: libs/libphp5.a src/%
+libs/libmatrirx_%.a: src/% libs/libphp5.a
 	@make -C $< ../../$@ TARGET=../../$@ CPPFLAGS="-I`pwd`/includes -I`pwd`/php/php -I`pwd`/php/php/Zend -I`pwd`/php/php/TSRM -I`pwd`/php/php/main"
 
 matrirx: $(patsubst %,libs/lib%.a,$(INTERNAL_LIBS))

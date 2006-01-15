@@ -7,7 +7,7 @@ if [ $# = 0 ]; then
 	libs=`cat *.dep`
 	final_echo=yes
 else
-	libs="$0"
+	libs="$1"
 	final_echo=no
 fi
 
