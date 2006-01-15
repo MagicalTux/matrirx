@@ -1,7 +1,7 @@
 #make
 # MatrIRX III
 
-CFLAGS=-g -ggdb -O0
+CFLAGS=-g -ggdb -O0 --std=gnu99
 # CFLAGS=-O3
 CC=gcc
 export CC CFLAGS

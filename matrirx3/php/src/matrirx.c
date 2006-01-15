@@ -29,9 +29,12 @@ zend_module_entry matrirx_module_entry = {
 };
 
 PHP_MINFO_FUNCTION(matrirx) {
+	char buf[32];
 	php_info_print_table_start();
 	php_info_print_table_row(2, "MatrIRX support", "enabled");
-	php_info_print_table_row(2, "MatrIRX version", "0.0.0");
+	php_info_print_table_row(2, "MatrIRX version", MATRIRX_VERSION);
+	sprintf(buf, "%ld", MATRIRX_MAX_CHILD_COUNT);
+	php_info_print_table_row(2, "Max child count", buf);
 	php_info_print_table_end();
 }
 
@@ -51,6 +54,8 @@ PHP_MINIT_FUNCTION(matrirx) {
 	REGISTER_STRING_CONSTANT("_RESET", "\x0f", CONST_CS | CONST_PERSISTENT);
 	REGISTER_STRING_CONSTANT("_UNDERLINE", "\x1f", CONST_CS | CONST_PERSISTENT);
 	REGISTER_STRING_CONSTANT("IRC_SVC_MODES", "+pqioS", CONST_CS | CONST_PERSISTENT);
+	/* Addon specific constants */
+	REGISTER_STRING_CONSTANT("CHILD_NAME", global_addon_name, CONST_CS | CONST_PERSISTENT);
 	return SUCCESS;
 }
 

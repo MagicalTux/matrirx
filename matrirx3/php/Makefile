@@ -8,7 +8,7 @@ all: ../libs/libphp5.a
 	@. php-5.1.2/libphp5.la; cp "$$libdir/$$old_library" ../libs/libphp5.a; echo "$$dependency_libs" >../libs/libphp5.dep
 
 php-$(PHP_VERSION).tar.bz2:
-	wget http://fr2.php.net/get/php-$(PHP_VERSION).tar.bz2/from/this/mirror
+	wget http://php.net/get/php-$(PHP_VERSION).tar.bz2/from/this/mirror
 
 php-$(PHP_VERSION):
 	tar xjf php-$(PHP_VERSION).tar.bz2
@@ -21,7 +21,7 @@ php-$(PHP_VERSION)/sapi/matrirx: sapi
 	rm -fr php-$(PHP_VERSION)/sapi/matrirx; cp -a sapi/ php-$(PHP_VERSION)/sapi/matrirx
 
 php-$(PHP_VERSION)/config.status:
-	@cd php-$(PHP_VERSION); ./buildconf --force; CPPFLAGS="-I`pwd`/../../includes" ./configure --disable-cli --disable-cgi --disable-all --enable-matrirx --enable-pcre --enable-curl --enable-zlib --enable-sockets --enable-iconv --with-sqlite --enable-sqlite-utf8 --enable-mbstring --enable-calendar --enable-matrirx-sapi
+	@cd php-$(PHP_VERSION); ./buildconf --force; CPPFLAGS="-I`pwd`/../../includes" ./configure --disable-cli --disable-cgi --disable-all --enable-matrirx --with-pcre --with-curl --with-zlib --enable-sockets --with-iconv --with-sqlite --enable-sqlite-utf8 --enable-mbstring --enable-calendar --enable-matrirx-sapi
 
 clean:
 	rm -f ../libs/libphp5.a
