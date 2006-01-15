@@ -18,14 +18,14 @@ title:
 libs/libphp5.a: php php/src php/sapi
 	@make -C php
 
-libs/libmatrirx_%.a: src/%
+libs/libmatrirx_%.a: libs/libphp5.a src/%
 	@make -C $< ../../$@ TARGET=../../$@ CPPFLAGS="-I`pwd`/includes -I`pwd`/php/php -I`pwd`/php/php/Zend -I`pwd`/php/php/TSRM -I`pwd`/php/php/main"
 
 matrirx: $(patsubst %,libs/lib%.a,$(INTERNAL_LIBS))
-	$(CC) -o $@ $^ `cat libs/*.dep`
+	$(CC) -o $@ $^ `./libs/get_deps.sh`
 
 clean:
 	@make -C php clean
 	@make -C src/core clean
-	@rm -f libs/* matrirx
+	@rm -f libs/*.a libs/*.dep matrirx
 

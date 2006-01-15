@@ -33,9 +33,9 @@
 #define PTSRMLS_C        &tsrm_ls
 #define PTSRMLS_CC       , PTSRMLS_C
 
-#define PHP_MATRIRX_SAPI_START_BLOCK(x,y) { \
+#define PHP_MATRIRX_SAPI_START_BLOCK() { \
     void ***tsrm_ls; \
-    php_matrirx_sapi_init(x, y PTSRMLS_CC); \
+    php_matrirx_sapi_init(PTSRMLS_CC); \
     zend_first_try {
 
 #else
@@ -44,8 +44,8 @@
 #define PTSRMLS_C
 #define PTSRMLS_CC
 
-#define PHP_MATRIRX_SAPI_START_BLOCK(x,y) { \
-    php_matrirx_sapi_init(x, y); \
+#define PHP_MATRIRX_SAPI_START_BLOCK() { \
+    php_matrirx_sapi_init(); \
     zend_first_try {
 
 #endif
