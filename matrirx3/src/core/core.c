@@ -3,19 +3,19 @@
  */
 
 #include <stdio.h>
+#include <matrirx.h>
 
-int php_embed_init(int argc, char **argv);
-void php_embed_shutdown();
-// if (zend_eval_string_ex(exec_direct, NULL, "Command line code", 1 TSRMLS_CC) == FAILURE)
-// ZEND_API int zend_eval_string_ex(char *str, zval *retval_ptr, char *string_name, int handle_exceptions TSRMLS_DC)
-int zend_eval_string_ex(char *str, void *, char *string_name, int handle_exceptions);
+#include <sapi/matrirx/php_matrirx.h>
+
+//int zend_eval_string_ex(char *str, void *, char *string_name, int handle_exceptions);
 
 int main(int argc, char *argv[]) {
-	const char *phpcode="echo \"Hello World from PHP/\".phpversion().\" MatrIRX/\".matrirx_version().\"\\n\"; var_dump(get_loaded_extensions());";
+	char *phpcode="echo 'Hello World from PHP/'.phpversion().' MatrIRX/'.matrirx_version().' - SAPI='.php_sapi_name().\"\\n\";";
+	global_executable_location = argv[0];
 	printf("Passing PHP code to PHP5(sapi:embed): %s\n", phpcode);
-	php_embed_init(0, NULL);
+	php_matrirx_sapi_init(0, NULL);
 	zend_eval_string_ex(phpcode, NULL, "Test Code", 1);
-	php_embed_shutdown();
+	php_matrirx_sapi_shutdown();
 	return 0;
 }
 

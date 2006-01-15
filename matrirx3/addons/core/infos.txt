@@ -1,0 +1,8 @@
+Name: Core MatrIRX Bot
+Version: 2.0.0
+SVN: $Id: infos.txt 70 2005-04-29 09:16:45Z MagicalTux $
+Description: This is the Core MatrIRX bot, used for external commands (from IRC)
+Author: MagicalTux
+Email: MagicalTux@FF.st
+URL: http://ff.st/
+Flags: C

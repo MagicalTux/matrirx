@@ -58,7 +58,7 @@
 }
 
 BEGIN_EXTERN_C() 
-int php_matrirx_sapi_init(int argc, char **argv PTSRMLS_DC);
+int php_matrirx_sapi_init(PTSRMLS_DC);
 void php_matrirx_sapi_shutdown(TSRMLS_D);
 extern sapi_module_struct php_matrirx_sapi_module;
 END_EXTERN_C()

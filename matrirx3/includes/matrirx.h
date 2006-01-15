@@ -3,5 +3,7 @@
 
 #define MATRIRX_VERSION "3.0.0"
 
+char *global_executable_location;
+
 #endif
 

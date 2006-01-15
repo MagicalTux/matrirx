@@ -1,0 +1,8 @@
+Name: Test Bot
+Version: 1.0.0
+SVN: $Id: infos.txt 58 2005-04-27 14:44:57Z MagicalTux $
+Description: A test bot, for testing :)
+Author: MagicalTux
+Email: MagicalTux@FF.st
+URL: http://ff.st/
+Flags: 

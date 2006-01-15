@@ -1,1 +1,0 @@
-./configure --disable-cli --disable-cgi --enable-embed=static --disable-all
