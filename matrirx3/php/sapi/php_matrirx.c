@@ -4,6 +4,7 @@
 /* $Id$ */
 
 #include "php_matrirx.h"
+#include "matrirx_mod.h"
 #include <matrirx.h>
 
 #ifdef PHP_WIN32
@@ -75,7 +76,7 @@ static void php_matrirx_sapi_register_variables(zval *track_vars_array TSRMLS_DC
 }
 
 static int php_matrirx_sapi_startup(sapi_module_struct *sapi_module) {
-	if (php_module_startup(sapi_module, NULL, 0)==FAILURE) {
+	if (php_module_startup(sapi_module, phpext_matrirx_ptr, 1)==FAILURE) {
 		return FAILURE;
 	}
 	return SUCCESS;

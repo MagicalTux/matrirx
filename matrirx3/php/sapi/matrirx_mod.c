@@ -3,7 +3,7 @@
 #endif
 
 #include "php.h"
-#include "php_matrirx.h"
+#include "matrirx_mod.h"
 #include <matrirx.h>
 
 static function_entry matrirx_functions[] = {
