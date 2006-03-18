@@ -1,4 +1,10 @@
-<?
+<?php
+/* main low-level loop
+ * $Id$
+ */
+
+$GLOBALS['lastnoop'] = 0; // avoid Notice on first ever loop
+
 function main_loop() {
 	if (!$GLOBALS['link']) {
 		irc_connect();
@@ -26,3 +32,4 @@ function main_loop() {
 		}
 	}
 }
+
