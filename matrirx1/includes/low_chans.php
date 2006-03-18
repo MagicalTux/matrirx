@@ -36,7 +36,7 @@ function irc_do_part($user,$chan,$nocb=false) {
 	if (!isset($GLOBALS['users'][$user])) return;
 	unset($GLOBALS['chans'][$chan]['users'][$user]);
 	unset($GLOBALS['users'][$user]['chans'][$chan]);
-	unset($GLOBALS['chans'][$chan]['modes'][$user]);
+	if (isset($GLOBALS['chans'][$chan]['modes'][$user])) unset($GLOBALS['chans'][$chan]['modes'][$user]);
 	$GLOBALS['chans'][$chan]['usercount']=count($GLOBALS['chans'][$chan]['users']);
 	if ($GLOBALS['chans'][$chan]['usercount']<1) {
 		unset($GLOBALS['chans'][$chan]);
