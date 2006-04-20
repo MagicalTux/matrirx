@@ -1,0 +1,9 @@
+* Implement following Unreal commands:
+ - CHGIDENT <nickname> <new ident>
+ - GLOBOPS :<message>
+
+* Implement following tokens:
+ - Ss
+
+* Implement Unreal's TKL command (G/Z/K/Q/etc lines)
+
