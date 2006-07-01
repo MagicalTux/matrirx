@@ -5,7 +5,7 @@
 error_reporting(E_ALL);
 set_time_limit(0);
 
-define('MATRIRX_VERSION','0.1.119');
+define('MATRIRX_VERSION','0.1.121');
 
 // open includes
 

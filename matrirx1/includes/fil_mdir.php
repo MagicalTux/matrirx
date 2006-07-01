@@ -15,26 +15,15 @@ function mk_name($name) {
 		var_dump($name);
 		$name=strval($name);
 	}
-	$res='';
-	for($i=0;$i<=2;$i++) {
-		if (!isset($name{$i})) $name{$i}='.';
-		$res.=priv_mdir_check($name{$i});
-	}
-	$res.=substr($name,3);
-	return $res;
-}
-
-function priv_mdir_check($char) {
-	if (!$char) return '_';
-	if ($char=='.') return '_';
-	return $char;
+	$name=str_replace('/', '', $name);
+	return $name;
 }
 
 function mk_path($path,$name) {
 	$name=mk_name($name);
 	if (substr($path,-1)!='/') $path.='/';
-	$path.=$name{0}.'/'.$name{1};
+	$path.=$name{0}.'/'.$name{0}.$name{1};
 	priv_mdir_rmkd($path);
-	$path.='/'.substr($name,2);
+	$path.='/'.$name;
 	return $path;
 }	
