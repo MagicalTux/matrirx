@@ -1,6 +1,7 @@
 ChangeLog - $Id: changelog.txt 74 2005-05-02 15:52:57Z MagicalTux $
 
 Version 0.1.121 [DEV] :
+ * (MagicalTux) Added addons/stats.php with its changelog
  * (MagicalTux) New mk_path(), should fix some problems with Stats file paths
 
 Version 0.1.120 [RELEASE] :

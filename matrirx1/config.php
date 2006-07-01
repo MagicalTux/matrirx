@@ -48,5 +48,7 @@ $conf['stats']['ident']='Service'; // ident (before the @)
 $conf['stats']['host']=$conf['local']['name']; // Host
 $conf['stats']['real']='Statistics Generator - http://stats.irc.ff.st/';
 $conf['stats']['directory']=_ROOT.'logs/'; // Directory where to put logs
+$conf['stats']['stats_url']='http://stats.irc.ooKoo.org/%lang/%url';
 
 $GLOBALS['config']=$conf;
+

@@ -1,0 +1,12 @@
+Stats
+=====
+
+This bot will join *every* channel on your network, and will log all activity.
+It has some function, like announcing every 24 hours the url for the channel's
+statistics, and various other use(ful|less) things.
+
+NB: Due to a limitation in MatrIRX v1 architecture, changing the bot's name
+will require you to also change all the function's names in the addons/stats.php
+file.
+
+This is *highly* experimental. Use at your own risk.

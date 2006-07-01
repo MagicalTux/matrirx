@@ -1,0 +1,10 @@
+Stats ChangeLog - $Id: changelog.txt 74 2005-05-02 15:52:57Z MagicalTux $
+
+Version 1.0.44 [DEV] :
+ * (MagicalTux) Release to public
+ * (MagicalTux) Removed some features from stats, added comments
+ * (MagicalTux) Changed logs format from mIRC6 to eggdrop
+
+Version 1.0.43 :
+ * (MagicalTux) Added a changelog (yeah, this one)
+
