@@ -14,9 +14,10 @@ function load_arrayfile($fil) {
 }
 
 function save_arrayfile($fil,$data) {
-	$fh=@fopen($fil,'w');
+	$fh=@fopen($fil.'~','w');
 	if (!$fh) return false;
 	fwrite($fh,serialize($data));
 	fclose($fh);
+	rename($fil.'~', $fil);
 	return true;
 }
