@@ -188,7 +188,7 @@ function irc_func_part($dat) {
 	$c=explode(',',$c);
 	foreach($c as $chan) {
 		irc_do_part($dat['src'],$chan);
-		callmod('userpart',array('user'=>$src,'chan'=>$chan));
+		callmod('userpart',array('user'=>$src,'chan'=>$chan,'msg'=>$dat['pars'][1]));
 		callmod('part',$chan,$dat['src']);
 	}
 }
